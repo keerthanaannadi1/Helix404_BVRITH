@@ -1,0 +1,10 @@
+Problem 1: Collaborative Weekly Report Management System
+Theme: Smart Productivity Systems
+Problem Statement
+Design a web-based collaborative system to streamline the preparation of departmental
+weekly reports at an educational institution.
+Currently, weekly reports are prepared manually by collecting data from multiple faculty
+members across 17 structured sections. This leads to delays, inconsistencies, missed
+entries, and increased manual effort for coordinators. The system should enable structured
+section-wise data entry, centralized management, multi-user collaboration, and automated
+report generation in the institution's prescribed format.

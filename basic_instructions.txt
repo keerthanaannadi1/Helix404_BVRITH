@@ -1,0 +1,19 @@
+*We have created a centralized GitHub repository for code submission.*
+Please follow the below instructions:
+1. All teams must upload their project code to the provided GitHub repository link.
+2. Each team should create a separate folder using the naming format:
+   **Team#_College**
+   (Example: Team1_BVRIT, Team2_ABCCollege)
+3. Inside the team folder, maintain the following structure:
+   * **/frontend** → Frontend files
+   * **/backend** → Backend files
+   * **/database** → Database schemas (SQL / scripts / documentation)
+Example:
+Team1_BVRIT/
+├── frontend/
+├── backend/
+└── database/
+4. Tech Stack (any one):
+   * Java + React + Any Database
+   * MERN Stack (MongoDB, Express, React, Node.js)
+5. Teams must ensure their code is properly organized and uploaded to the repository before the deadline.

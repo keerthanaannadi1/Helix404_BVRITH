@@ -1,48 +1,57 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const userSchema = new mongoose.Schema({
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   name: {
-    type: String,
-    required: true
+    type: DataTypes.STRING,
+    allowNull: false
   },
   email: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    allowNull: false,
     unique: true,
-    match: /@bvrithyderabad\.edu\.in$/
+    validate: {
+      isEmail: true,
+      is: /@bvrithyderabad\.edu\.in$/
+    }
   },
   googleId: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    allowNull: false,
     unique: true
   },
   role: {
-    type: String,
-    enum: ['faculty', 'admin'],
-    default: 'faculty'
+    type: DataTypes.ENUM('faculty', 'admin'),
+    defaultValue: 'faculty'
   },
-  department: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Department',
-    default: null
+  departmentId: {
+    type: DataTypes.INTEGER,
+    allowNull: true
   },
-  departmentChangeRequest: {
-    requestedDepartment: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Department'
-    },
-    status: {
-      type: String,
-      enum: ['pending', 'approved', 'rejected']
-    },
-    requestedAt: Date
+  departmentChangeRequestId: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  departmentChangeStatus: {
+    type: DataTypes.ENUM('pending', 'approved', 'rejected'),
+    allowNull: true
+  },
+  departmentChangeRequestedAt: {
+    type: DataTypes.DATE,
+    allowNull: true
   },
   isActive: {
-    type: Boolean,
-    default: true
+    type: DataTypes.BOOLEAN,
+    defaultValue: true
   }
 }, {
+  tableName: 'users',
   timestamps: true
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = User;

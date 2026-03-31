@@ -1,13 +1,14 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 
-const StudentEvents = sequelize.define('StudentEvents', {
+const GeneralPoints = sequelize.define('GeneralPoints', {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   reportId: { type: DataTypes.INTEGER, allowNull: false },
   departmentId: { type: DataTypes.INTEGER, allowNull: false },
   createdBy: { type: DataTypes.INTEGER, allowNull: false },
-  data: { type: DataTypes.JSONB, defaultValue: {} },
+  content: { type: DataTypes.TEXT, allowNull: false },
+  type: { type: DataTypes.ENUM('meeting', 'announcement', 'other'), defaultValue: 'other' },
   attachments: { type: DataTypes.JSONB, defaultValue: [] }
-}, { tableName: 'student_events', timestamps: true });
+}, { tableName: 'general_points', timestamps: true });
 
-module.exports = StudentEvents;
+module.exports = GeneralPoints;

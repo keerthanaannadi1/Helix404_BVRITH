@@ -1,36 +1,14 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/db');
 
-const reportSchema = new mongoose.Schema({
-  weekStart: {
-    type: Date,
-    required: true
-  },
-  weekEnd: {
-    type: Date,
-    required: true
-  },
-  department: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Department',
-    default: null  // null = institution-wide
-  },
-  reportType: {
-    type: String,
-    enum: ['weekly', 'monthly', 'yearly'],
-    default: 'weekly'
-  },
-  status: {
-    type: String,
-    enum: ['active', 'generated'],
-    default: 'active'
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  }
-}, {
-  timestamps: true
-});
+const Report = sequelize.define('Report', {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  weekStart: { type: DataTypes.DATE, allowNull: false },
+  weekEnd: { type: DataTypes.DATE, allowNull: false },
+  departmentId: { type: DataTypes.INTEGER },
+  reportType: { type: DataTypes.ENUM('weekly', 'monthly', 'yearly'), defaultValue: 'weekly' },
+  status: { type: DataTypes.ENUM('active', 'generated'), defaultValue: 'active' },
+  createdBy: { type: DataTypes.INTEGER, allowNull: false }
+}, { tableName: 'reports', timestamps: true });
 
-module.exports = mongoose.model('Report', reportSchema);
+module.exports = Report;

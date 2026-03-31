@@ -7,12 +7,13 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "keywords": ["bvrit", "reports", "mern"],
+  "keywords": ["bvrit", "reports", "postgresql"],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.0",
-    "mongoose": "^7.0.0",
+    "pg": "^8.11.0",
+    "sequelize": "^6.32.0",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "express-session": "^1.17.0",

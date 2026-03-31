@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
-const connectDB = require('./config/db');
+const { connectDB } = require('./config/db');
 
 const app = express();
 
@@ -23,6 +23,10 @@ app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/sections', require('./routes/sections'));
+app.use('/api/departments', require('./routes/departments'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/reports', require('./routes/reports'));
 
 // Health check
 app.get('/health', (req, res) => {

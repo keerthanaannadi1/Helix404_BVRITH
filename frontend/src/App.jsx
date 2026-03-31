@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import SectionForm from './pages/SectionForm'
+import AdminPanel from './pages/AdminPanel'
 
 const queryClient = new QueryClient()
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID
@@ -17,6 +19,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/section/:sectionName" element={<SectionForm />} />
+            <Route path="/admin" element={<AdminPanel />} />
             <Route path="/" element={<Navigate to="/login" />} />
           </Routes>
         </BrowserRouter>

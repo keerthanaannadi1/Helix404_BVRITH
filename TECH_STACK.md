@@ -198,7 +198,7 @@ VITE_GOOGLE_CLIENT_ID=your_google_client_id
 ## 🚀 FOLDER STRUCTURE (Per basic_instructions.txt)
 
 ```
-Team1_BVRITH/
+Team1_BVRIT/
 ├── frontend/
 │   ├── src/
 │   │   ├── api/axios.js

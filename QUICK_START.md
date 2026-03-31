@@ -14,7 +14,7 @@
 
 ## 🎯 KEY FEATURES AT A GLANCE
 
-✅ **17 Data Entry Sections**: From general points to skill development programs  
+✅ **18 Data Entry Sections**: From general points to skill development programs  
 ✅ **Role-Based Access**: Faculty (data entry) + Admin (full control)  
 ✅ **Department Management**: Admin creates departments, faculty can request changes  
 ✅ **Report Generation**: Weekly/Monthly/Yearly reports in DOCX/PDF format  
@@ -37,7 +37,7 @@ Express Backend (Port 5000)
 
 ---
 
-## 📂 17 SECTIONS TO IMPLEMENT
+## 📂 18 SECTIONS TO IMPLEMENT
 
 1. **General Points** - Meetings, announcements
 2. **Faculty Joined/Relieved** - Hiring/exit records
@@ -74,7 +74,7 @@ Express Backend (Port 5000)
 ### FACULTY
 - ✅ Login with college email (@bvrithyderabad.edu.in)
 - ✅ Select department on first login
-- ✅ Enter data in all 17 sections
+- ✅ Enter data in all 18 sections
 - ✅ Edit/delete ONLY their own entries
 - ✅ Request department change
 - ❌ Cannot generate or preview reports
@@ -102,7 +102,8 @@ Express Backend (Port 5000)
 
 ### Auth
 ```
-POST   /api/auth/login
+GET    /api/auth/google
+GET    /api/auth/google/callback
 GET    /api/auth/me
 ```
 
@@ -122,7 +123,7 @@ GET    /api/departments
 DELETE /api/departments/:id
 ```
 
-### Sections (Generic for all 17)
+### Sections (Generic for all 18)
 ```
 GET    /api/sections/:sectionName?reportId=xxx&department=yyy
 POST   /api/sections/:sectionName
@@ -171,10 +172,10 @@ POST   /api/reports/generate/yearly
 ## 🎨 UI PAGES TO BUILD
 
 ### Public Pages
-- `/login` - Email/password login
+- `/login` - Google sign-in page
 
 ### Faculty Pages
-- `/dashboard` - 17 section cards with status
+- `/dashboard` - 18 section cards with status
 - `/section/:sectionName` - Data entry form
 - `/profile` - Department change request
 
@@ -257,7 +258,7 @@ npm run dev
 ### Must Test Before Launch
 - [ ] Faculty login with college email
 - [ ] First-time department selection
-- [ ] Add entry to each of 17 sections
+- [ ] Add entry to each of 18 sections
 - [ ] Edit own entry (faculty)
 - [ ] Delete own entry with confirmation
 - [ ] Admin creates department
@@ -274,7 +275,7 @@ npm run dev
 
 ✅ Auth with JWT  
 ✅ Department management  
-✅ All 17 section data entry  
+✅ All 18 section data entry  
 ✅ Edit/delete own entries  
 ✅ Admin panel  
 ✅ Weekly report generation  
@@ -393,7 +394,7 @@ Use this checklist to track overall progress:
 ### Backend Progress
 - [ ] Auth system complete
 - [ ] Department management complete
-- [ ] All 17 section models created
+- [ ] All 18 section models created
 - [ ] Section CRUD APIs complete
 - [ ] Report generation complete
 - [ ] Export service (DOCX) complete
@@ -405,7 +406,7 @@ Use this checklist to track overall progress:
 - [ ] Auth UI complete
 - [ ] Layout components complete
 - [ ] Dashboard complete
-- [ ] All 17 section forms complete
+- [ ] All 18 section forms complete
 - [ ] Admin panel complete
 - [ ] Report generation UI complete
 - [ ] Mobile responsive

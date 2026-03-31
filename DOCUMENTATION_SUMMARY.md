@@ -26,7 +26,7 @@
 - Development tools
 
 **Key Decisions**:
-- MongoDB for flexible schema (17 different section structures)
+- MongoDB for flexible schema (18 different section structures)
 - JWT for stateless authentication
 - Separate collections for VEDIC programs (students vs faculty)
 - Role-based access: Admin (full control) vs Faculty (own entries only)
@@ -67,7 +67,7 @@
 
 **Contents**:
 - Project summary
-- 17 sections list
+- 18 sections list
 - User roles & permissions
 - Tech stack quick ref
 - Key API endpoints
@@ -130,13 +130,13 @@
 ## 📊 SYSTEM OVERVIEW
 
 ### Core Functionality
-1. **Data Entry**: 17 structured sections for weekly activities
+1. **Data Entry**: 18 structured sections for weekly activities
 2. **Collaboration**: Multiple faculty enter data simultaneously
 3. **Status Tracking**: Dashboard shows section completion status
 4. **Report Generation**: Automated DOCX/PDF in institutional format
 5. **User Management**: Admin controls departments and faculty accounts
 
-### 17 Data Sections
+### 18 Data Sections
 1. General Points
 2. Faculty Joined/Relieved
 3. Faculty Achievements
@@ -273,7 +273,7 @@ These will be created during/after implementation:
 6. **Email domain validation** - Must be @bvrithyderabad.edu.in
 
 ### What Stayed the Same
-1. 17 structured sections for data entry
+1. 18 structured sections for data entry
 2. JWT authentication
 3. MongoDB database
 4. React frontend
@@ -302,7 +302,7 @@ These will be created during/after implementation:
 ## 🎯 SUCCESS METRICS
 
 ### Technical Metrics
-- All 17 sections functional
+- All 18 sections functional
 - Report generation < 5 seconds
 - Mobile responsive (all pages)
 - Zero critical security vulnerabilities
